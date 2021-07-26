@@ -17,10 +17,6 @@ public class RatingService {
         return ratingRepository.findAll();
     }
 
-    public Rating findRatingById(Long id) {
-        return ratingRepository.findById(id).get();
-    }
-
     public Rating createRating(Rating rating) {
         return ratingRepository.save(rating);
     }

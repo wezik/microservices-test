@@ -14,9 +14,9 @@ public class RatingController {
 
     private final RatingService ratingService;
 
-    @GetMapping("/{movieId}")
-    public List<Rating> findRatingsByMovieId(@PathVariable(required = false) Long movieId) {
-        return movieId==null ? ratingService.findAllRatings() : ratingService.findRatingsByMovieId(movieId);
+    @GetMapping
+    public List<Rating> findRatingsByMovieId(@RequestParam(required = false, defaultValue = "0") Long movie_id) {
+        return movie_id==0 ? ratingService.findAllRatings() : ratingService.findRatingsByMovieId(movie_id);
     }
 
     @PostMapping
@@ -29,8 +29,8 @@ public class RatingController {
         ratingService.deleteRating(ratingId);
     }
 
-    @PutMapping("/{ratingId}")
-    public Rating updateMovie(@RequestBody Rating rating, @PathVariable(required = false) Long ratingId) {
+    @PutMapping
+    public Rating updateMovie(@RequestBody Rating rating) {
         return ratingService.updateRating(rating);
     }
 

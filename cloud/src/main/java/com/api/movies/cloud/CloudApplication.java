@@ -1,15 +1,17 @@
-package com.api.movies.moviesservice;
+package com.api.movies.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-@SpringBootApplication
+@EnableConfigServer
 @EnableEurekaClient
-public class MoviesServiceApplication {
+@SpringBootApplication
+public class CloudApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MoviesServiceApplication.class, args);
+        SpringApplication.run(CloudApplication.class, args);
     }
 
 }

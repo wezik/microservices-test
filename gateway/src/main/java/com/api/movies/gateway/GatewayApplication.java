@@ -1,15 +1,17 @@
-package com.api.movies.moviesservice;
+package com.api.movies.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
+@EnableZuulProxy
 @EnableEurekaClient
-public class MoviesServiceApplication {
+public class GatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MoviesServiceApplication.class, args);
+        SpringApplication.run(GatewayApplication.class, args);
     }
 
 }
