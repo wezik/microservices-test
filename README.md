@@ -1,4 +1,4 @@
-# My first attempt at using micro services
+# My first attempt at using microservices
 
 Config files are available in other repo: https://github.com/wezik/microservices-test-application-config
 
